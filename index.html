@@ -14,7 +14,7 @@
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#" class="nav-logo"><img src="gensis-logo.png" alt="Gensis Studios" class="nav-logo-img">GENSIS STUDIOS</a>
+      <span class="nav-logo"><img src="gensis-logo.png" alt="Gensis Studios" class="nav-logo-img">GENSIS STUDIOS</span>
       <ul class="nav-links" id="navLinks">
         <li><a href="#hero">Home</a></li>
         <li><a href="#showreel">Work</a></li>
@@ -161,11 +161,17 @@
         <h2 class="section-title">Contact Us</h2>
       </div>
       <div class="fade-in" style="max-width: 600px; margin: 0 auto;">
-        <form class="fade-in" style="margin-top: 32px; display: flex; flex-direction: column; gap: 16px;">
-          <input type="email" placeholder="Your Email" style="padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1rem;" required>
-          <textarea placeholder="Brief explanation of how we can help" rows="5" style="padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1rem; resize: vertical;" required></textarea>
+        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="contact-form" class="fade-in" style="margin-top: 32px; display: flex; flex-direction: column; gap: 16px;">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hp-field" hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+          <input type="email" name="email" placeholder="Your Email" style="padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1rem;" required>
+          <textarea name="message" id="message" placeholder="Brief explanation of how we can help (500 character max)" rows="5" maxlength="500" style="padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1rem; resize: vertical;" required></textarea>
+          <div class="char-counter" id="char-counter">0/500 characters</div>
           <button type="submit" class="btn-primary" style="align-self: center;">Send Message</button>
         </form>
+        <div id="contact-success" class="contact-success" hidden>
+          <p>Thanks — we'll be in touch shortly.</p>
+        </div>
         <p style="margin-top: 24px; font-size: 1.15rem; font-weight: 300; letter-spacing: 0.05em;"><a href="mailto:info@gensis.co.uk" style="color: var(--text-muted); text-decoration: none;">info@gensis.co.uk</a></p>
       </div>
     </div>

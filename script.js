@@ -42,3 +42,35 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 fadeEls.forEach(el => observer.observe(el));
+
+// ── Contact form: live char counter + Netlify AJAX submit ──
+const contactForm = document.getElementById('contact-form');
+const messageField = document.getElementById('message');
+const charCounter = document.getElementById('char-counter');
+const contactSuccess = document.getElementById('contact-success');
+
+if (contactForm && messageField && charCounter) {
+  const updateCounter = () => {
+    charCounter.textContent = `${messageField.value.length}/500 characters`;
+  };
+  messageField.addEventListener('input', updateCounter);
+  updateCounter();
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(contactForm);
+    const body = new URLSearchParams(data).toString();
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
+      });
+      if (!res.ok) throw new Error('Network response was not ok');
+      contactForm.hidden = true;
+      contactSuccess.hidden = false;
+    } catch (err) {
+      alert('Something went wrong sending your message. Please try again or email info@gensis.co.uk directly.');
+    }
+  });
+}
