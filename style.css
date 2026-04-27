@@ -60,6 +60,11 @@ img {
 /* ── Section ── */
 .section {
   padding: 120px 0;
+  scroll-margin-top: 72px;
+}
+
+#hero {
+  scroll-margin-top: 72px;
 }
 
 .section-header {
@@ -998,13 +1003,16 @@ img {
   height: auto;
   border-radius: 12px;
   display: block;
-  transform: translateX(-88px);
+  transform: translateX(-48px);
 }
 
 @media (max-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+  .about-photo {
+    transform: none;
   }
 }
 

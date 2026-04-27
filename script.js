@@ -67,6 +67,7 @@ const verifyEmailDomain = async (email) => {
 
 if (contactForm && contactSuccess && new URLSearchParams(window.location.search).get('sent') === '1') {
   contactForm.hidden = true;
+  contactForm.style.display = 'none';
   contactSuccess.hidden = false;
 }
 
