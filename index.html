@@ -56,7 +56,7 @@
       </div>
       <div class="showreel-split fade-in">
         <div class="showreel-text">
-          <ul class="body-text" style="list-style: disc; padding-left: 20px; display: flex; flex-direction: column; gap: 16px;">
+          <ul class="body-text" style="padding-left: 20px; display: flex; flex-direction: column; gap: 32px;">
             <li>We have generated over 300 million views in the past 4 months alone from AI content, gaining over 400,000 new followers this calendar year. We have 800,000 followers in total across our social media platforms.</li>
             <li>We have generated 20,000,000+ views in promotional content for top labels, such as OVO and Epic Records, as well as AI companies such as Higgsfield, AI video, and Picturesque.</li>
             <li>By combining our social media expertise, with a comprehensive understanding of the highest-grade AI models, we keep pushing the limits of what was thought possible with AI.</li>
@@ -148,8 +148,10 @@
       <div class="section-header fade-in">
         <h2 class="section-title">About Us</h2>
       </div>
-      <div class="fade-in">
-        <p class="body-text">I'm Daniel Royle, founder and CEO of Gensis Studios. I have been actively working in content creation for 7 years, and began experimenting with AI tools during their early development. I have studied social media algorithms and consumer behaviour to understand viral patterns. I have personally conversed with AI companies and experts, to truly understand how to fully utilise these tools.</p>
+      <div class="about-grid fade-in">
+        <p class="body-text">I'm Daniel Royle, founder and CEO of Gensis Studios. I have been actively working in content creation for 7 years, and began experimenting with AI tools during their early development.<br><br>I have studied social media algorithms and consumer behaviour to understand viral patterns. I have personally conversed with AI companies and experts, to truly understand how to fully utilise these tools.</p>
+        <img class="about-photo" src="bbbbbbbbbbbb.png" alt="Daniel Royle, founder of Gensis Studios">
+
       </div>
     </div>
   </section>
@@ -164,13 +166,15 @@
         <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="contact-form" class="fade-in" style="margin-top: 32px; display: flex; flex-direction: column; gap: 16px;">
           <input type="hidden" name="form-name" value="contact">
           <p class="hp-field" hidden><label>Don't fill this out: <input name="bot-field"></label></p>
-          <input type="email" name="email" placeholder="Your Email" style="padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1rem;" required>
-          <textarea name="message" id="message" placeholder="Brief explanation of how we can help (500 character max)" rows="5" maxlength="500" style="padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1rem; resize: vertical;" required></textarea>
-          <div class="char-counter" id="char-counter">0/500 characters</div>
+          <input type="email" name="email" id="email" placeholder="Your Email" style="padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1rem;" required>
+          <div id="email-error" style="color: #ff6b6b; font-size: 0.9rem; text-align: left; margin-top: -8px;" hidden>Please enter a valid email address (e.g. name@example.com).</div>
+          <div id="email-domain-error" style="color: #ff6b6b; font-size: 0.9rem; text-align: left; margin-top: -8px;" hidden>We couldn't verify that email's domain. Please double-check the address.</div>
+          <textarea name="message" id="message" placeholder="Brief explanation of how we can help [300 character max]" rows="5" maxlength="300" style="padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1rem; resize: vertical;" required></textarea>
+          <div class="char-counter" id="char-counter" hidden>0/300 characters</div>
           <button type="submit" class="btn-primary" style="align-self: center;">Send Message</button>
         </form>
         <div id="contact-success" class="contact-success" hidden>
-          <p>Thanks — we'll be in touch shortly.</p>
+          <p>Thanks, we'll get back to you shortly.</p>
         </div>
         <p style="margin-top: 24px; font-size: 1.15rem; font-weight: 300; letter-spacing: 0.05em;"><a href="mailto:info@gensis.co.uk" style="color: var(--text-muted); text-decoration: none;">info@gensis.co.uk</a></p>
       </div>
