@@ -65,6 +65,11 @@ const verifyEmailDomain = async (email) => {
   }
 };
 
+if (contactForm && contactSuccess && new URLSearchParams(window.location.search).get('sent') === '1') {
+  contactForm.hidden = true;
+  contactSuccess.hidden = false;
+}
+
 if (contactForm && messageField && charCounter) {
   const updateCounter = () => {
     const len = messageField.value.length;
@@ -130,8 +135,7 @@ if (contactForm && messageField && charCounter) {
         body,
       });
       if (!res.ok) throw new Error('Network response was not ok');
-      contactForm.hidden = true;
-      contactSuccess.hidden = false;
+      window.location.href = `${window.location.pathname}?sent=1#contact`;
     } catch (err) {
       alert('Something went wrong sending your message. Please try again or email info@gensis.co.uk directly.');
       if (submitButton) {
