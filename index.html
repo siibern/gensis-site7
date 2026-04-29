@@ -176,7 +176,7 @@
         <h2 class="section-title">Contact Us</h2>
       </div>
       <div class="fade-in contact-wrapper">
-        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" id="contact-form" class="fade-in">
+        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="contact-form" class="fade-in">
           <input type="hidden" name="form-name" value="contact">
           <p class="hp-field" hidden><label>Don't fill this out: <input name="bot-field"></label></p>
           <input type="email" name="email" id="email" placeholder="Your Email" required>
@@ -184,7 +184,6 @@
           <div id="email-domain-error" class="form-error" hidden>We couldn't verify that email's domain. Please double-check the address.</div>
           <textarea name="message" id="message" placeholder="Brief explanation of how we can help [300 character max]" rows="5" maxlength="300" required></textarea>
           <div class="char-counter" id="char-counter" hidden>0/300 characters</div>
-          <div data-netlify-recaptcha="true"></div>
           <button type="submit" class="btn-primary">Send Message</button>
         </form>
         <div id="contact-success" class="contact-success" hidden>

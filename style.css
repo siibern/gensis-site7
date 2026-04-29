@@ -1160,7 +1160,6 @@ img {
   resize: vertical;
 }
 
-#contact-form > div[data-netlify-recaptcha],
 #contact-form > button[type="submit"] {
   align-self: center;
 }
