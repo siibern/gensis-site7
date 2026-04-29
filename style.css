@@ -867,14 +867,8 @@ img {
   .testimonials-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
-@media (max-width: 768px) {
-  .section {
-    padding: 80px 0;
-  }
-
-  /* Nav */
+  /* Hamburger nav for tablets + phone landscape */
   .hamburger {
     display: flex;
   }
@@ -899,6 +893,58 @@ img {
 
   .nav-links a {
     font-size: 18px;
+  }
+
+  /* Marquee logos: neutralize oversized inline scales for tablets + phone landscape */
+  .marquee-logo {
+    height: 70px;
+    transform: none !important;
+  }
+
+  .marquee-track {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  /* About Us: drop desktop offsets that break on small screens */
+  #campaigns .section-header {
+    margin-bottom: 24px;
+    transform: none;
+  }
+
+  #campaigns .body-text {
+    margin-top: 0;
+    margin-left: 0;
+    max-width: none;
+  }
+
+  #campaigns .about-text {
+    margin: 0;
+    max-width: none;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  #campaigns .about-text .body-text {
+    text-align: center;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  /* Marquee logos: shrink further on phones */
+  .marquee-logo {
+    height: 50px;
+  }
+
+  .marquee-track {
+    gap: 40px;
   }
 
   /* Grids */
@@ -985,10 +1031,16 @@ img {
   font-size: clamp(17px, 1.6vw, 21px);
   font-weight: 400;
   line-height: 1.6;
+  color: #d0d0d0;
+}
+
+#campaigns .about-text {
   margin-top: 128px;
   margin-left: 60px;
   max-width: 45ch;
-  color: #d0d0d0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6em;
 }
 
 .about-grid {
@@ -1012,6 +1064,18 @@ img {
     gap: 32px;
   }
   .about-photo {
+    transform: none;
+  }
+  #campaigns .about-text {
+    margin-top: 0;
+    margin-left: 0;
+    max-width: none;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  #campaigns .section-header {
+    margin-bottom: 24px;
     transform: none;
   }
 }
@@ -1043,4 +1107,78 @@ img {
   margin: 0;
   font-size: 1.15rem;
   color: #fff;
+}
+
+/* ══════════════════════════════════════════════
+   INLINE STYLE REPLACEMENTS
+   ══════════════════════════════════════════════ */
+.showreel-bullets {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.marquee-logo--wayfarer { transform: scale(1.1); }
+.marquee-logo--koi { transform: scale(1.2); }
+.marquee-logo--higgsfield { transform: scale(1.3); }
+.marquee-logo--ey { transform: scale(1.5); }
+.marquee-logo--aivideo { transform: scale(1.82); }
+
+.masterclass-img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+}
+
+#contact {
+  text-align: center;
+}
+
+.contact-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contact-form {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#contact-form input[type="email"],
+#contact-form textarea {
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+#contact-form textarea {
+  resize: vertical;
+}
+
+#contact-form > div[data-netlify-recaptcha],
+#contact-form > button[type="submit"] {
+  align-self: center;
+}
+
+.form-error {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  text-align: left;
+  margin-top: -8px;
+}
+
+.contact-email {
+  margin-top: 24px;
+  font-size: 1.15rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.contact-email a {
+  color: var(--text-muted);
 }
